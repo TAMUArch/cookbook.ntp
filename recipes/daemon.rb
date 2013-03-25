@@ -1,20 +1,12 @@
 #
 # Cookbook Name:: ntp
-# Recipe:: default
+# Recipe:: daemon 
 #
 # Copyright 2013, TAMU College of Architecture 
 #
 # All rights reserved - Do Not Redistribute
 #
 #
-case node["platform_family"]
-when "rhel"
-  node.set[:ntp][:service] = "ntpd"
-when "debian"
-  node.set[:ntp][:service] = "ntp"
-else
-  node.set[:ntp][:service] = "ntp"
-end
 
 package "ntp" do
   action [:install]
