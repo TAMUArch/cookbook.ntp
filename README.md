@@ -1,24 +1,14 @@
 ntp Cookbook
 ============
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+Configures NTP to run on clients.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
-#### packages
-- `toaster` - ntp needs toaster to brown your bagel.
+This cookbook has only been tested with Ubuntu 12.04 and Ubuntu 10.04
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
-e.g.
-#### ntp::default
 <table>
   <tr>
     <th>Key</th>
@@ -27,35 +17,24 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['ntp']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['ntp']['servers']</tt></td>
+    <td>Array</td>
+    <td>List of ntp servers</td>
+    <td><tt></tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### ntp::default
-TODO: Write usage instructions for each cookbook.
+The default recipe will install and use the ntp service.
 
-e.g.
-Just include `ntp` in your node's `run_list`:
+#### ntp::cron
+This is just a cron job that runs ntpdate using the first ntp server in the list.  This is pretty much a hack that we use in our environment atm to deal with drifting times.
 
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[ntp]"
-  ]
-}
-```
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write you change
@@ -65,4 +44,6 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Jim Rosser
+
+License: MIT 
