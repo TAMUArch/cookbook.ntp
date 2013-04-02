@@ -13,7 +13,7 @@ service node[:ntp][:service] do
 end
 
 cron "ntpdate #{node[:ntp][:servers][0]}" do
-  command "ntpdate #{node[:ntp][:servers][0]}"
+  command "/usr/sbin/ntpdate #{node[:ntp][:servers][0]}"
   minute 30
   action :create
 end
