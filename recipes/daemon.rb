@@ -14,7 +14,7 @@ end
 
 template "/etc/ntp.conf" do
   source "ntp.conf.erb"
-  variables( {:ntp_servers => ["ntp1.tamu.edu", "ntp2.tamu.edu", "ntp3.tamu.edu"]} )
+  variables( node[:ntp][:servers] )
   owner "root"
   group "root"
   mode 0644
